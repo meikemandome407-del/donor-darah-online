@@ -51,24 +51,38 @@ const RegisterDonor = () => {
         {error && <div style={{ background: '#fee2e2', color: '#c0392b', padding: '0.75rem', borderRadius: '12px', marginBottom: '1rem' }}>{error}</div>}
         
         <form onSubmit={handleSubmit}>
-          <div style={{ marginBottom: '1.2rem' }}>
-            <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Saya Ingin Mendaftar Sebagai:</label>
-            <select name="role" value={form.role} onChange={handleChange} style={{ margin: 0 }}>
-              <option value="donor">Pendonor Darah (Ingin Menyumbang)</option>
-              <option value="recipient">Pasien / Penerima (Butuh Darah)</option>
+          <div style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+            <label style={{ fontWeight: '700', color: '#1e272e', display: 'block', marginBottom: '0.2rem', fontSize: '1.05rem' }}>
+              Saya Ingin Mendaftar Sebagai:
+            </label>
+            <select 
+              name="role" 
+              value={form.role} 
+              onChange={handleChange} 
+              style={{ backgroundColor: 'white', cursor: 'pointer', border: '1px solid #e1e8ef', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}
+            >
+              <option value="donor">🩸 Pendonor Darah (Ingin Menyumbang)</option>
+              <option value="recipient">🏥 Pasien / Penerima (Butuh Darah)</option>
             </select>
           </div>
 
-          <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-          <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+          <input type="email" name="email" placeholder="Email" onChange={handleChange} required autoComplete="off" />
+          <input type="password" name="password" placeholder="Password" onChange={handleChange} required autoComplete="new-password" />
           <input type="text" name="fullName" placeholder={form.role === 'donor' ? 'Nama Lengkap' : 'Nama Lengkap Pasien/Keluarga'} onChange={handleChange} required />
           <input type="tel" name="phone" placeholder={form.role === 'donor' ? 'No. Telepon / WhatsApp' : 'No. Telepon Aktif'} onChange={handleChange} required />
           
           {form.role === 'donor' && (
             <>
-              <div style={{ marginBottom: '1.2rem' }}>
-                <label style={{ fontWeight: 'bold', display: 'block', marginBottom: '0.5rem' }}>Golongan Darah</label>
-                <select name="bloodType" value={form.bloodType} onChange={handleChange} style={{ margin: 0 }}>
+              <div style={{ marginBottom: '1.5rem', textAlign: 'left', marginTop: '0.5rem' }}>
+                <label style={{ fontWeight: '700', color: '#1e272e', display: 'block', marginBottom: '0.2rem', fontSize: '1.05rem' }}>
+                  Golongan Darah
+                </label>
+                <select 
+                  name="bloodType" 
+                  value={form.bloodType} 
+                  onChange={handleChange} 
+                  style={{ backgroundColor: 'white', cursor: 'pointer', border: '1px solid #e1e8ef', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}
+                >
                   <option value="A+">A+</option>
                   <option value="A-">A-</option>
                   <option value="B+">B+</option>
