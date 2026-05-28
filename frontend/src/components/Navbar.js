@@ -33,7 +33,13 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* KIRI: Logo + Email di bawah */}
         <div className="nav-left">
-          <Link to="/" className="logo">🩸 <span>DONOR DARAH</span></Link>
+          <Link to="/" className="logo">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="var(--primary)" style={{ filter: 'drop-shadow(0 4px 6px rgba(211,47,47,0.3))' }}>
+              <path d="M12 2C12 2 4 9.4 4 15C4 19.4183 7.58172 23 12 23C16.4183 23 20 19.4183 20 15C20 9.4 12 2 12 2Z" />
+              <path d="M12 23C16.418 23 20 19.418 20 15C20 9.4 12 2 12 2C12 2 4 9.4 4 15C4 16.55 4.434 17.989 5.176 19.16C6.772 17.182 8.783 15.393 11 13.916C11 13.916 11 13.916 11.001 13.916C12.441 12.868 13.882 12.274 15.344 12.196C15.86 12.169 16.368 12.222 16.85 12.35C18.17 12.7 19.167 13.682 19.648 14.93C19.877 15.524 20 16.19 20 16.91C20 16.91 20 16.911 20 16.911C19.999 18.256 19.444 19.467 18.55 20.323C16.892 21.91 14.577 22.887 12 22.996V23Z" fill="white" fillOpacity="0.2"/>
+            </svg>
+            <span>DONOR DARAH</span>
+          </Link>
         </div>
 
         {/* TENGAH: Menu sejajar */}
