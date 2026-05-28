@@ -41,7 +41,7 @@ const Login = () => {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
           <button type="submit" disabled={loading}>{loading ? 'Memproses...' : 'Login'}</button>
         </form>
-        <p style={{ textAlign: 'center', marginTop: '1rem' }}>Belum punya akun? <Link to="/register" style={{ color: '#e74c3c' }}>Daftar Akun Baru</Link></p>
+        <p style={{ textAlign: 'center', marginTop: '1rem' }}>Belum punya akun? <Link to="/register" style={{ color: '#d32f2f' }}>Daftar Akun Baru</Link></p>
       </div>
     </div>
   );

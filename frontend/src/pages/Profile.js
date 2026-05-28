@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BloodDrop from '../components/BloodDrop';
 
 // ============ KOMPONEN PROFIL PASIEN (RECIPIENT) ============
 const RecipientProfile = () => {
@@ -59,7 +60,7 @@ const RecipientProfile = () => {
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             <Link to="/request">
               <button style={{ background: 'linear-gradient(135deg, #8e44ad, #9b59b6)', border: 'none', color: 'white', padding: '0.8rem 2rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', width: 'auto', boxShadow: '0 4px 15px rgba(142,68,173,0.3)', fontSize: '1rem' }}>
-                🩸 Buat Permintaan Baru
+                <BloodDrop size="1em" style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Buat Permintaan Baru
               </button>
             </Link>
             <Link to="/my-requests">
@@ -164,8 +165,8 @@ const DonorProfile = () => {
       )}
 
       <div className="profile-card" style={{ background: 'white', borderRadius: '32px', boxShadow: '0 20px 35px -10px rgba(0,0,0,0.15)', overflow: 'hidden', transition: 'all 0.3s' }}>
-        <div style={{ background: isAdmin ? 'linear-gradient(135deg, #2c3e50, #3498db)' : 'linear-gradient(135deg, #e74c3c, #c0392b)', padding: '2rem 2rem 1.5rem 2rem', textAlign: 'center', color: 'white' }}>
-          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: isAdmin ? '#2c3e50' : '#c0392b', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
+        <div style={{ background: isAdmin ? 'linear-gradient(135deg, #2c3e50, #3498db)' : 'linear-gradient(135deg, #d32f2f, #b71c1c)', padding: '2rem 2rem 1.5rem 2rem', textAlign: 'center', color: 'white' }}>
+          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: isAdmin ? '#2c3e50' : '#d32f2f', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
             {initial}
           </div>
           <h2 style={{ margin: 0, fontSize: '1.8rem' }}>{profile.fullName}</h2>
@@ -185,35 +186,35 @@ const DonorProfile = () => {
             <>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem', textAlign: 'left' }}>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#e74c3c'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>{isAdmin ? 'Informasi Institusi' : 'Informasi Pribadi'}</h3>
+                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#d32f2f'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>{isAdmin ? 'Informasi Institusi' : 'Informasi Pribadi'}</h3>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#e74c3c' }}>📧 Email Kontak</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📧 Email Kontak</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.user?.email || '-'}</p>
                   </div>
                   {!isAdmin && (
                     <div style={{ marginBottom: '0.75rem' }}>
-                      <span style={{ fontWeight: '600', color: '#e74c3c' }}>🩸 Golongan Darah</span>
+                      <span style={{ fontWeight: '600', color: '#d32f2f' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Golongan Darah</span>
                       <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.bloodType}</p>
                     </div>
                   )}
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#e74c3c' }}>📞 Telepon / Hotline</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📞 Telepon / Hotline</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.phone}</p>
                   </div>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#e74c3c'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>Kantor & Aktivitas</h3>
+                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#d32f2f'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>Kantor &amp; Aktivitas</h3>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#e74c3c' }}>📍 Alamat Fisik / Markas</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📍 Alamat Fisik / Markas</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.address}</p>
                   </div>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#e74c3c' }}>📅 Terdaftar Sejak</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📅 Terdaftar Sejak</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{joinDate}</p>
                   </div>
                   {!isAdmin && (
                     <div style={{ marginBottom: '0.75rem' }}>
-                      <span style={{ fontWeight: '600', color: '#e74c3c' }}>🩸 Terakhir Donor</span>
+                      <span style={{ fontWeight: '600', color: '#d32f2f' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Terakhir Donor</span>
                       <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>
                         {profile.lastDonationDate ? new Date(profile.lastDonationDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Belum pernah/Tidak tercatat'}
                       </p>
@@ -222,12 +223,12 @@ const DonorProfile = () => {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <button onClick={() => setEditMode(true)} style={{ background: isAdmin ? 'linear-gradient(135deg, #2980b9, #3498db)' : 'linear-gradient(135deg, #e74c3c, #c0392b)', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', border: 'none', color: 'white', fontWeight: 'bold', cursor: 'pointer', boxShadow: isAdmin ? '0 4px 15px rgba(52,152,219,0.3)' : '0 4px 15px rgba(231,76,60,0.3)' }}>
+                <button onClick={() => setEditMode(true)} style={{ background: isAdmin ? 'linear-gradient(135deg, #2980b9, #3498db)' : 'linear-gradient(135deg, #d32f2f, #b71c1c)', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', border: 'none', color: 'white', fontWeight: 'bold', cursor: 'pointer', boxShadow: isAdmin ? '0 4px 15px rgba(52,152,219,0.3)' : '0 4px 15px rgba(211,47,47,0.3)' }}>
                   ✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}
                 </button>
                 {!isAdmin && (
                   <>
-                    <button onClick={toggleAvailability} style={{ background: 'none', border: `2px solid ${profile.isAvailable ? '#e74c3c' : '#2ecc71'}`, color: profile.isAvailable ? '#e74c3c' : '#2ecc71', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer' }}>
+                    <button onClick={toggleAvailability} style={{ background: 'none', border: `2px solid ${profile.isAvailable ? '#d32f2f' : '#2ecc71'}`, color: profile.isAvailable ? '#d32f2f' : '#2ecc71', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer' }}>
                       {profile.isAvailable ? '🔴 Tandai Tidak Tersedia' : '🟢 Tandai Tersedia'}
                     </button>
                     <button onClick={recordDonation} style={{ background: 'linear-gradient(135deg, #8e44ad, #9b59b6)', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', border: 'none', color: 'white', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 4px 15px rgba(142,68,173,0.3)' }}>
@@ -239,7 +240,7 @@ const DonorProfile = () => {
             </>
           ) : (
             <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
-              <h3 style={{ marginTop: 0, marginBottom: '1.5rem', color: isAdmin ? '#2980b9' : '#e74c3c' }}>✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}</h3>
+              <h3 style={{ marginTop: 0, marginBottom: '1.5rem', color: isAdmin ? '#2980b9' : '#d32f2f' }}>✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
                 <div>
                   <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{isAdmin ? 'Nama Institusi / RS' : 'Nama Lengkap'}</label>

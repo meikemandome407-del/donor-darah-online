@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BloodDrop from '../components/BloodDrop';
 
 const SearchDonor = () => {
   const [bloodType, setBloodType] = useState('A+');
@@ -78,7 +79,7 @@ const SearchDonor = () => {
             <div className="donor-grid">
               {donors.map(d => (
                 <div key={d.id} className="donor-card">
-                  <div className="donor-avatar">🩸</div>
+                  <div className="donor-avatar"><BloodDrop size="2.2rem" /></div>
                   <div className="donor-info">
                     <h3>{d.fullName}</h3>
                     <p><strong>Golongan Darah:</strong> <span style={{ color: d.bloodType === bloodType ? '#27ae60' : '#f39c12', fontWeight: 'bold' }}>{d.bloodType}</span> {d.bloodType !== bloodType ? '(Cocok/Universal)' : ''}</p>

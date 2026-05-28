@@ -61,7 +61,7 @@ const RegisterDonor = () => {
               onChange={handleChange} 
               style={{ backgroundColor: 'white', cursor: 'pointer', border: '1px solid #e1e8ef', boxShadow: '0 4px 12px rgba(0,0,0,0.03)' }}
             >
-              <option value="donor">🩸 Pendonor Darah (Ingin Menyumbang)</option>
+              <option value="donor">🔴 Pendonor Darah (Ingin Menyumbang)</option>
               <option value="recipient">🏥 Pasien / Penerima (Butuh Darah)</option>
             </select>
           </div>

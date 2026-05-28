@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import MapDonors from '../components/MapDonors';
 import api from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BloodDrop from '../components/BloodDrop';
 
 const Home = () => {
   const [stats, setStats] = useState(null);
@@ -32,7 +33,7 @@ const Home = () => {
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
           <Link to="/register">
             <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#d32f2f', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
-              🩸 Daftar Sebagai Donor
+              <BloodDrop size="1em" style={{ marginRight: '6px' }} /> Daftar Sebagai Donor
             </button>
           </Link>
           <Link to="/search">
@@ -109,7 +110,7 @@ const Home = () => {
           </>
         ) : token && role === 'donor' ? (
           <>
-            <h1>Terima Kasih, Pahlawan! 🩸</h1>
+            <h1>Terima Kasih, Pahlawan! <BloodDrop size="1em" color="white" style={{ marginLeft: '4px' }} /></h1>
             <p>Kontribusi Anda sangat berarti. Pantau status ketersediaan Anda dan catat riwayat donasi Anda.</p>
           </>
         ) : token && role === 'admin' ? (
@@ -129,7 +130,7 @@ const Home = () => {
       {/* Stats */}
       {stats ? (
         <div className="stats-section">
-          <div className="stat-card"><h3>🩸 {stats.totalDonors}</h3><p>Total Donor</p></div>
+          <div className="stat-card"><h3><BloodDrop size="1.2em" style={{ marginRight: '8px' }} />{stats.totalDonors}</h3><p>Total Donor</p></div>
           <div className="stat-card"><h3>✅ {stats.availableDonors}</h3><p>Donor Tersedia</p></div>
           <div className="stat-card"><h3>📋 {stats.totalRequests}</h3><p>Permintaan Darah</p></div>
           <div className="stat-card"><h3>⏳ {stats.pendingRequests}</h3><p>Pending</p></div>

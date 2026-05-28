@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
+import BloodDrop from '../components/BloodDrop';
 
 const RequestBlood = () => {
   const navigate = useNavigate();
@@ -50,7 +51,7 @@ const RequestBlood = () => {
   return (
     <div className="container" style={{ maxWidth: 680 }}>
       <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '2.5rem', color: '#e74c3c', fontWeight: '800' }}>🩸 Permintaan Darah Darurat</h1>
+        <h1 style={{ fontSize: '2.5rem', color: '#d32f2f', fontWeight: '800', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}><BloodDrop size="1.1em" /> Permintaan Darah Darurat</h1>
         <p style={{ color: '#747d8c', fontSize: '1.1rem' }}>Isi form di bawah ini. Pendonor terdekat akan otomatis dinotifikasi via email.</p>
       </div>
 
@@ -67,10 +68,10 @@ const RequestBlood = () => {
           </div>
           <div>
             <strong>Stok PMI untuk darah {form.bloodType}:</strong>{' '}
-            <span style={{ fontWeight: '800', color: stockStatus === 'ok' ? '#27ae60' : stockStatus === 'low' ? '#f39c12' : '#e74c3c' }}>
+            <span style={{ fontWeight: '800', color: stockStatus === 'ok' ? '#27ae60' : stockStatus === 'low' ? '#f39c12' : '#d32f2f' }}>
               {stockQty} kantong
             </span>
-            {stockStatus === 'empty' && <span style={{ color: '#e74c3c', fontSize: '0.9rem', display: 'block' }}>Stok kosong — permintaan Anda akan dikirimkan ke pendonor terdekat.</span>}
+            {stockStatus === 'empty' && <span style={{ color: '#d32f2f', fontSize: '0.9rem', display: 'block' }}>Stok kosong — permintaan Anda akan dikirimkan ke pendonor terdekat.</span>}
             {stockStatus === 'low' && <span style={{ color: '#f39c12', fontSize: '0.9rem', display: 'block' }}>Stok menipis — pendonor di sekitar Anda juga akan dinotifikasi.</span>}
             {stockStatus === 'ok' && <span style={{ color: '#27ae60', fontSize: '0.9rem', display: 'block' }}>Stok aman — PMI siap membantu.</span>}
           </div>
@@ -106,7 +107,7 @@ const RequestBlood = () => {
           <label style={{ fontWeight: '600', display: 'block', marginBottom: '0.3rem' }}>Nomor Kontak (HP / WA)</label>
           <input type="text" name="contact" placeholder="Contoh: 08123456789" value={form.contact} onChange={handleChange} required />
 
-          <button type="submit" disabled={loading} style={{ marginTop: '0.5rem', background: 'linear-gradient(135deg, #e74c3c, #c0392b)', boxShadow: '0 5px 20px rgba(231,76,60,0.4)' }}>
+          <button type="submit" disabled={loading} style={{ marginTop: '0.5rem', background: 'linear-gradient(135deg, #d32f2f, #b71c1c)', boxShadow: '0 5px 20px rgba(211,47,47,0.4)' }}>
             {loading ? '⏳ Mengirim & Mencari Donor...' : '🚨 Kirim Permintaan Sekarang'}
           </button>
         </form>

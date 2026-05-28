@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BloodDrop from '../components/BloodDrop';
 
 const MyRequests = () => {
   const [requests, setRequests] = useState([]);
@@ -82,7 +83,7 @@ const MyRequests = () => {
           <p style={{ color: '#747d8c', marginBottom: '1.5rem' }}>Buat permintaan pertama Anda sekarang jika sedang membutuhkan darah.</p>
           <Link to="/request">
             <button style={{ width: 'auto', padding: '0.8rem 2rem', background: 'linear-gradient(135deg, #d32f2f, #b71c1c)', boxShadow: '0 4px 15px rgba(211,47,47,0.3)' }}>
-              🩸 Buat Permintaan Baru
+              <BloodDrop size="1em" style={{ marginRight: '6px' }} /> Buat Permintaan Baru
             </button>
           </Link>
         </div>
@@ -126,7 +127,7 @@ const MyRequests = () => {
                       <span style={{ fontSize: '1.5rem', fontWeight: '800', background: 'rgba(211,47,47,0.1)', color: '#d32f2f', padding: '4px 12px', borderRadius: '8px' }}>
                         {req.bloodType}
                       </span>
-                      <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#2f3542' }}>🩸 {req.patientName}</h3>
+                      <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#2f3542' }}><BloodDrop size="1em" style={{ marginRight: '6px' }} />{req.patientName}</h3>
                       <span style={{ background: cfg.bg, color: cfg.color, border: `1px solid ${cfg.border}`, padding: '3px 12px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: '700' }}>
                         {cfg.label}
                       </span>

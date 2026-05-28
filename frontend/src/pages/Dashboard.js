@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import api from '../services/api';
 import LoadingSpinner from '../components/LoadingSpinner';
+import BloodDrop from '../components/BloodDrop';
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('requests'); // 'requests' | 'stocks' | 'donors'
@@ -162,7 +163,7 @@ const Dashboard = () => {
             📋 Semua Permintaan
           </button>
           <button className={`sidebar-btn ${activeTab === 'stocks' ? 'active' : ''}`} onClick={() => setActiveTab('stocks')}>
-            🩸 Stok Kantong Darah
+            <BloodDrop size="1.1em" style={{ marginRight: '6px' }} /> Stok Kantong Darah
           </button>
           <button className={`sidebar-btn ${activeTab === 'donors' ? 'active' : ''}`} onClick={() => setActiveTab('donors')}>
             👥 Data Relawan
@@ -174,14 +175,14 @@ const Dashboard = () => {
               <button className="sidebar-btn" onClick={() => setFilters({...filters, status: 'fulfilled'})}>✅ Terpenuhi</button>
               <button className="sidebar-btn" onClick={() => setFilters({...filters, status: 'cancelled'})}>❌ Dibatalkan</button>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5px' }}>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'A+'})}>🩸 A+</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'A-'})}>🩸 A-</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'B+'})}>🩸 B+</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'B-'})}>🩸 B-</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'AB+'})}>🩸 AB+</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'AB-'})}>🩸 AB-</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'O+'})}>🩸 O+</button>
-                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'O-'})}>🩸 O-</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'A+'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> A+</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'A-'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> A-</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'B+'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> B+</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'B-'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> B-</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'AB+'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> AB+</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'AB-'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> AB-</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'O+'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> O+</button>
+                <button className="sidebar-btn" style={{ fontSize: '0.8rem', padding: '8px' }} onClick={() => setFilters({...filters, bloodType: 'O-'})}><BloodDrop size="0.9em" style={{ marginRight: '3px' }} /> O-</button>
               </div>
               <hr />
               <button className="sidebar-btn" onClick={() => setFilters({bloodType: 'all', status: 'all'})}>🔄 Reset Filter</button>
@@ -211,7 +212,7 @@ const Dashboard = () => {
                 {requests.map(req => (
                   <div key={req.id} className="card request-card">
                     <div className="request-info">
-                      <h3>🩸 {req.patientName}</h3>
+                      <h3><BloodDrop size="1.1em" style={{ marginRight: '6px' }} />{req.patientName}</h3>
                       <p><strong>Gol. Darah:</strong> {req.bloodType}</p>
                       <p><strong>RS:</strong> {req.hospital}</p>
                       <p><strong>Alamat RS:</strong> {req.address}</p>
@@ -248,7 +249,7 @@ const Dashboard = () => {
         {activeTab === 'stocks' && (
           <>
             <div className="dashboard-header">
-              <h2>🩸 Manajemen Stok Kantong Darah</h2>
+              <h2><BloodDrop size="1.1em" style={{ marginRight: '8px' }} />Manajemen Stok Kantong Darah</h2>
               <p>Perbarui ketersediaan kantong darah di instansi Anda secara real-time.</p>
             </div>
             {loading ? (
