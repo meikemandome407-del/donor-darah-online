@@ -31,7 +31,7 @@ const Home = () => {
       return (
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
           <Link to="/register">
-            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#e74c3c', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
+            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#d32f2f', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
               🩸 Daftar Sebagai Donor
             </button>
           </Link>
@@ -48,7 +48,7 @@ const Home = () => {
       return (
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
           <Link to="/profile">
-            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#e74c3c', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
+            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#d32f2f', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
               👤 Lihat Profil Saya
             </button>
           </Link>
@@ -65,7 +65,7 @@ const Home = () => {
       return (
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
           <Link to="/request">
-            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#e74c3c', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
+            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#d32f2f', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
               🚨 Minta Darah Sekarang
             </button>
           </Link>
@@ -82,7 +82,7 @@ const Home = () => {
       return (
         <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap', marginTop: '2rem' }}>
           <Link to="/dashboard">
-            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#e74c3c', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
+            <button style={{ width: 'auto', padding: '0.9rem 2.2rem', background: 'white', color: '#d32f2f', border: '2px solid white', fontWeight: '800', fontSize: '1.05rem', borderRadius: '50px', cursor: 'pointer' }}>
               ⚙️ Buka Dashboard Admin
             </button>
           </Link>
@@ -159,9 +159,9 @@ const Home = () => {
                   className={isLow ? 'pulse-empty' : ''}
                   style={{
                     background: isLow
-                      ? 'linear-gradient(135deg, rgba(255,71,87,0.1), rgba(255,107,129,0.15))'
+                      ? 'linear-gradient(135deg, rgba(211,47,47,0.1), rgba(229,57,53,0.15))'
                       : 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
-                    border: isLow ? '2px solid rgba(255,71,87,0.4)' : '1px solid var(--glass-border)',
+                    border: isLow ? '2px solid rgba(211,47,47,0.4)' : '1px solid var(--glass-border)',
                     borderRadius: '20px', padding: '1.2rem 0.8rem', textAlign: 'center',
                     boxShadow: '0 8px 25px rgba(0,0,0,0.05)', backdropFilter: 'blur(10px)',
                     transition: 'transform 0.3s ease', cursor: role === 'recipient' ? 'pointer' : 'default'
@@ -173,15 +173,15 @@ const Home = () => {
                     if (role === 'recipient') window.location.href = '/request';
                   }}
                 >
-                  <div style={{ fontSize: '2.2rem', fontWeight: '800', color: isLow ? '#ff4757' : '#2f3542' }}>{type}</div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: isLow ? '#ff4757' : '#2ecc71', margin: '0.3rem 0' }}>
+                  <div style={{ fontSize: '2.2rem', fontWeight: '800', color: isLow ? '#d32f2f' : '#2f3542' }}>{type}</div>
+                  <div style={{ fontSize: '1.5rem', fontWeight: '700', color: isLow ? '#d32f2f' : '#2ecc71', margin: '0.3rem 0' }}>
                     {q} <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: '#747d8c' }}>kntg</span>
                   </div>
-                  <div style={{ display: 'inline-block', padding: '2px 8px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 'bold', background: isLow ? '#ff4757' : '#2ecc71', color: 'white', marginTop: '0.4rem' }}>
+                  <div style={{ display: 'inline-block', padding: '2px 8px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 'bold', background: isLow ? '#d32f2f' : '#2ecc71', color: 'white', marginTop: '0.4rem' }}>
                     {isLow ? 'KOSONG' : 'AMAN'}
                   </div>
                   {role === 'recipient' && isLow && (
-                    <div style={{ fontSize: '0.7rem', color: '#ff4757', marginTop: '0.3rem' }}>Klik untuk minta</div>
+                    <div style={{ fontSize: '0.7rem', color: '#d32f2f', marginTop: '0.3rem' }}>Klik untuk minta</div>
                   )}
                 </div>
               );

@@ -233,7 +233,7 @@ const Dashboard = () => {
                       <button 
                         onClick={() => deleteRequest(req.id)} 
                         className="btn-delete" 
-                        style={{ background: '#ff4757', color: 'white', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold', marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 10px rgba(255,71,87,0.2)', width: 'max-content' }}
+                        style={{ background: '#d32f2f', color: 'white', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold', marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 10px rgba(211,47,47,0.2)', width: 'max-content' }}
                       >
                         🗑️ Hapus
                       </button>
@@ -262,7 +262,7 @@ const Dashboard = () => {
                     background: 'white', padding: '1.5rem', borderRadius: '20px', boxShadow: '0 10px 25px rgba(0,0,0,0.05)', textAlign: 'center', border: '1px solid rgba(0,0,0,0.05)'
                   }}>
                     <div style={{
-                      fontSize: '2.5rem', fontWeight: 'bold', color: '#ff4757', marginBottom: '0.5rem'
+                      fontSize: '2.5rem', fontWeight: 'bold', color: '#d32f2f', marginBottom: '0.5rem'
                     }}>{type}</div>
                     <div style={{ marginBottom: '1rem', color: '#747d8c', fontSize: '0.9rem' }}>
                       Update: {stocks[type]?.updatedAt ? new Date(stocks[type].updatedAt).toLocaleDateString('id-ID', { hour: '2-digit', minute: '2-digit' }) : 'Belum ada'}
@@ -291,7 +291,7 @@ const Dashboard = () => {
                         onClick={() => handleStockDelete(type)}
                         disabled={savingStock[type]}
                         style={{
-                          background: 'linear-gradient(135deg, #ff4757, #e84118)', color: 'white', border: 'none', padding: '0.6rem 0.8rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', flex: 1, boxShadow: '0 5px 15px rgba(255,71,87,0.3)', fontSize: '0.9rem'
+                          background: 'linear-gradient(135deg, #d32f2f, #e53935)', color: 'white', border: 'none', padding: '0.6rem 0.8rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', flex: 1, boxShadow: '0 5px 15px rgba(211,47,47,0.3)', fontSize: '0.9rem'
                         }}
                       >
                         🗑️ Hapus
@@ -333,7 +333,7 @@ const Dashboard = () => {
                       <tr key={donor.id} style={{ borderBottom: '1px solid #eee' }}>
                         <td style={{ padding: '1rem', fontWeight: 'bold', color: '#2f3542' }}>{donor.fullName}</td>
                         <td style={{ padding: '1rem' }}>
-                          <span style={{ background: 'rgba(255,71,87,0.1)', color: '#ff4757', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>
+                          <span style={{ background: 'rgba(211,47,47,0.1)', color: '#d32f2f', padding: '4px 10px', borderRadius: '8px', fontWeight: 'bold' }}>
                             {donor.bloodType}
                           </span>
                         </td>
@@ -358,7 +358,7 @@ const Dashboard = () => {
                           <button 
                             onClick={() => handleDonorDelete(donor.id)}
                             style={{
-                              background: '#ff4757', color: 'white', border: 'none', padding: '0.4rem 0.8rem', borderRadius: '12px', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(255,71,87,0.2)'
+                              background: '#d32f2f', color: 'white', border: 'none', padding: '0.4rem 0.8rem', borderRadius: '12px', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(211,47,47,0.2)'
                             }}
                           >
                             🗑️ Hapus

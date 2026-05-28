@@ -60,7 +60,7 @@ const MyRequests = () => {
       {toast && (
         <div style={{
           position: 'fixed', bottom: '30px', right: '30px', zIndex: 9999,
-          background: toast.startsWith('✅') ? '#27ae60' : '#e74c3c',
+          background: toast.startsWith('✅') ? '#27ae60' : '#d32f2f',
           color: 'white', padding: '1rem 1.5rem', borderRadius: '16px',
           fontWeight: '600', boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
           animation: 'fadeInUp 0.3s ease'
@@ -81,7 +81,7 @@ const MyRequests = () => {
           <h3 style={{ color: '#2f3542', marginBottom: '0.5rem' }}>Belum ada permintaan darah.</h3>
           <p style={{ color: '#747d8c', marginBottom: '1.5rem' }}>Buat permintaan pertama Anda sekarang jika sedang membutuhkan darah.</p>
           <Link to="/request">
-            <button style={{ width: 'auto', padding: '0.8rem 2rem', background: 'linear-gradient(135deg, #e74c3c, #c0392b)', boxShadow: '0 4px 15px rgba(231,76,60,0.3)' }}>
+            <button style={{ width: 'auto', padding: '0.8rem 2rem', background: 'linear-gradient(135deg, #d32f2f, #b71c1c)', boxShadow: '0 4px 15px rgba(211,47,47,0.3)' }}>
               🩸 Buat Permintaan Baru
             </button>
           </Link>
@@ -103,7 +103,7 @@ const MyRequests = () => {
             ))}
             <div style={{ flex: 1, minWidth: '140px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Link to="/request">
-                <button style={{ width: 'auto', padding: '0.8rem 1.5rem', fontSize: '0.95rem', background: 'linear-gradient(135deg, #e74c3c, #c0392b)' }}>
+                <button style={{ width: 'auto', padding: '0.8rem 1.5rem', fontSize: '0.95rem', background: 'linear-gradient(135deg, #d32f2f, #b71c1c)' }}>
                   + Permintaan Baru
                 </button>
               </Link>
@@ -123,7 +123,7 @@ const MyRequests = () => {
                 }}>
                   <div style={{ flex: 1, minWidth: '250px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', marginBottom: '0.8rem', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '1.5rem', fontWeight: '800', background: 'rgba(231,76,60,0.1)', color: '#e74c3c', padding: '4px 12px', borderRadius: '8px' }}>
+                      <span style={{ fontSize: '1.5rem', fontWeight: '800', background: 'rgba(211,47,47,0.1)', color: '#d32f2f', padding: '4px 12px', borderRadius: '8px' }}>
                         {req.bloodType}
                       </span>
                       <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#2f3542' }}>🩸 {req.patientName}</h3>
@@ -145,9 +145,9 @@ const MyRequests = () => {
                       <button
                         onClick={() => handleCancel(req.id)}
                         disabled={cancelling[req.id]}
-                        style={{ background: 'none', border: '2px solid #e74c3c', color: '#e74c3c', padding: '0.5rem 1.2rem', borderRadius: '50px', fontWeight: '700', cursor: 'pointer', width: 'auto', fontSize: '0.9rem', transition: 'all 0.2s' }}
-                        onMouseEnter={e => { e.target.style.background = '#e74c3c'; e.target.style.color = 'white'; }}
-                        onMouseLeave={e => { e.target.style.background = 'none'; e.target.style.color = '#e74c3c'; }}
+                        style={{ background: 'none', border: '2px solid #d32f2f', color: '#d32f2f', padding: '0.5rem 1.2rem', borderRadius: '50px', fontWeight: '700', cursor: 'pointer', width: 'auto', fontSize: '0.9rem', transition: 'all 0.2s' }}
+                        onMouseEnter={e => { e.target.style.background = '#d32f2f'; e.target.style.color = 'white'; }}
+                        onMouseLeave={e => { e.target.style.background = 'none'; e.target.style.color = '#d32f2f'; }}
                       >
                         {cancelling[req.id] ? '⏳...' : '❌ Batalkan'}
                       </button>
