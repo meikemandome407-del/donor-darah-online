@@ -233,7 +233,7 @@ const Dashboard = () => {
                       <button 
                         onClick={() => deleteRequest(req.id)} 
                         className="btn-delete" 
-                        style={{ background: '#ff4757', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold', marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 10px rgba(255,71,87,0.2)' }}
+                        style={{ background: '#ff4757', color: 'white', border: 'none', padding: '0.5rem 1.2rem', borderRadius: '50px', cursor: 'pointer', fontWeight: 'bold', marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', boxShadow: '0 4px 10px rgba(255,71,87,0.2)', width: 'max-content' }}
                       >
                         🗑️ Hapus
                       </button>
