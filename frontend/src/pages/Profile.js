@@ -26,21 +26,21 @@ const RecipientProfile = () => {
     <div className="container" style={{ maxWidth: '800px', margin: '2rem auto' }}>
       <div style={{ background: 'white', borderRadius: '32px', boxShadow: '0 20px 35px -10px rgba(0,0,0,0.15)', overflow: 'hidden' }}>
         {/* Header */}
-        <div style={{ background: 'linear-gradient(135deg, #8e44ad, #9b59b6)', padding: '2rem', textAlign: 'center', color: 'white' }}>
-          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: '#8e44ad', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
+        <div style={{ background: 'var(--primary-gradient)', padding: '2rem', textAlign: 'center', color: 'white' }}>
+          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: 'var(--primary)', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
             {initial}
           </div>
           <h2 style={{ margin: 0, fontSize: '1.8rem' }}>{user.email}</h2>
-          <span style={{ background: '#7d3c98', padding: '4px 16px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 'bold', display: 'inline-block', marginTop: '0.5rem' }}>
+          <span style={{ background: 'rgba(255, 255, 255, 0.2)', padding: '4px 16px', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 'bold', display: 'inline-block', marginTop: '0.5rem' }}>
             🏥 Pasien / Penerima Darah
           </span>
         </div>
 
         {/* Statistik Permintaan */}
         <div style={{ padding: '2rem' }}>
-          <h3 style={{ borderLeft: '4px solid #8e44ad', paddingLeft: '0.75rem', marginBottom: '1.5rem' }}>Ringkasan Permintaan Darah Saya</h3>
+          <h3 style={{ borderLeft: '4px solid var(--primary)', paddingLeft: '0.75rem', marginBottom: '1.5rem', color: 'var(--text-dark)' }}>Ringkasan Permintaan Darah Saya</h3>
           {loading ? <LoadingSpinner /> : (
-            <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}>
               <div style={{ flex: 1, minWidth: '150px', background: 'rgba(243,156,18,0.1)', border: '1px solid rgba(243,156,18,0.3)', borderRadius: '16px', padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2.5rem', fontWeight: '800', color: '#f39c12' }}>{pending}</div>
                 <div style={{ color: '#747d8c', fontWeight: '600' }}>⏳ Pending</div>
@@ -57,27 +57,21 @@ const RecipientProfile = () => {
           )}
 
           {/* Aksi Cepat */}
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <Link to="/request">
-              <button style={{ background: 'linear-gradient(135deg, #8e44ad, #9b59b6)', border: 'none', color: 'white', padding: '0.8rem 2rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', width: 'auto', boxShadow: '0 4px 15px rgba(142,68,173,0.3)', fontSize: '1rem' }}>
-                <BloodDrop size="1em" style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Buat Permintaan Baru
-              </button>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+            <Link to="/request" className="btn btn-primary">
+              <BloodDrop size="1.1em" color="white" style={{ marginRight: '4px' }} /> Buat Permintaan Baru
             </Link>
-            <Link to="/my-requests">
-              <button style={{ background: 'none', border: '2px solid #8e44ad', color: '#8e44ad', padding: '0.8rem 2rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', width: 'auto', fontSize: '1rem' }}>
-                📋 Lihat Riwayat Permintaan
-              </button>
+            <Link to="/my-requests" className="btn btn-outline-dark">
+              📋 Lihat Riwayat Permintaan
             </Link>
-            <Link to="/search">
-              <button style={{ background: 'none', border: '2px solid #3498db', color: '#3498db', padding: '0.8rem 2rem', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer', width: 'auto', fontSize: '1rem' }}>
-                🔍 Cari Donor Terdekat
-              </button>
+            <Link to="/search" className="btn btn-outline-primary">
+              🔍 Cari Donor Terdekat
             </Link>
           </div>
         </div>
 
-        <div style={{ background: '#f9f9f9', padding: '1rem 2rem', textAlign: 'center', borderTop: '1px solid #eee', fontSize: '0.85rem', color: '#747d8c' }}>
-          Semoga cepat mendapatkan bantuan yang dibutuhkan. 💙
+        <div style={{ background: '#f9f9f9', padding: '1.2rem 2rem', textAlign: 'center', borderTop: '1px solid #eee', fontSize: '0.85rem', color: '#747d8c', fontWeight: '500' }}>
+          Semoga cepat mendapatkan bantuan yang dibutuhkan. 🏥
         </div>
       </div>
     </div>
@@ -164,9 +158,9 @@ const DonorProfile = () => {
         </div>
       )}
 
-      <div className="profile-card" style={{ background: 'white', borderRadius: '32px', boxShadow: '0 20px 35px -10px rgba(0,0,0,0.15)', overflow: 'hidden', transition: 'all 0.3s' }}>
-        <div style={{ background: isAdmin ? 'linear-gradient(135deg, #2c3e50, #3498db)' : 'linear-gradient(135deg, #d32f2f, #b71c1c)', padding: '2rem 2rem 1.5rem 2rem', textAlign: 'center', color: 'white' }}>
-          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: isAdmin ? '#2c3e50' : '#d32f2f', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
+      <div className="profile-card" style={{ background: 'white', borderRadius: '32px', boxShadow: '0 20px 35px -10px rgba(0,0,0,0.15)', overflow: 'hidden', transition: 'all 0.3s', padding: 0 }}>
+        <div style={{ background: isAdmin ? 'linear-gradient(135deg, #2c3e50, #3498db)' : 'var(--primary-gradient)', padding: '2rem 2rem 1.5rem 2rem', textAlign: 'center', color: 'white' }}>
+          <div style={{ width: '100px', height: '100px', background: 'white', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem auto', fontSize: '3rem', fontWeight: 'bold', color: isAdmin ? '#2c3e50' : 'var(--primary)', boxShadow: '0 5px 15px rgba(0,0,0,0.2)' }}>
             {initial}
           </div>
           <h2 style={{ margin: 0, fontSize: '1.8rem' }}>{profile.fullName}</h2>
@@ -186,35 +180,35 @@ const DonorProfile = () => {
             <>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginBottom: '2rem', textAlign: 'left' }}>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#d32f2f'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>{isAdmin ? 'Informasi Institusi' : 'Informasi Pribadi'}</h3>
+                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : 'var(--primary)'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>{isAdmin ? 'Informasi Institusi' : 'Informasi Pribadi'}</h3>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📧 Email Kontak</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : 'var(--primary)' }}>📧 Email Kontak</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.user?.email || '-'}</p>
                   </div>
                   {!isAdmin && (
                     <div style={{ marginBottom: '0.75rem' }}>
-                      <span style={{ fontWeight: '600', color: '#d32f2f' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Golongan Darah</span>
+                      <span style={{ fontWeight: '600', color: 'var(--primary)' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Golongan Darah</span>
                       <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.bloodType}</p>
                     </div>
                   )}
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📞 Telepon / Hotline</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : 'var(--primary)' }}>📞 Telepon / Hotline</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.phone}</p>
                   </div>
                 </div>
                 <div style={{ flex: 1 }}>
-                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : '#d32f2f'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>Kantor &amp; Aktivitas</h3>
+                  <h3 style={{ borderLeft: `4px solid ${isAdmin ? '#3498db' : 'var(--primary)'}`, paddingLeft: '0.75rem', marginBottom: '1rem' }}>Kantor &amp; Aktivitas</h3>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📍 Alamat Fisik / Markas</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : 'var(--primary)' }}>📍 Alamat Fisik / Markas</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{profile.address}</p>
                   </div>
                   <div style={{ marginBottom: '0.75rem' }}>
-                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : '#d32f2f' }}>📅 Terdaftar Sejak</span>
+                    <span style={{ fontWeight: '600', color: isAdmin ? '#2980b9' : 'var(--primary)' }}>📅 Terdaftar Sejak</span>
                     <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>{joinDate}</p>
                   </div>
                   {!isAdmin && (
                     <div style={{ marginBottom: '0.75rem' }}>
-                      <span style={{ fontWeight: '600', color: '#d32f2f' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Terakhir Donor</span>
+                      <span style={{ fontWeight: '600', color: 'var(--primary)' }}><BloodDrop size="0.95em" style={{ marginRight: '5px' }} />Terakhir Donor</span>
                       <p style={{ margin: '0.25rem 0 0 0', color: '#555', fontWeight: '500' }}>
                         {profile.lastDonationDate ? new Date(profile.lastDonationDate).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) : 'Belum pernah/Tidak tercatat'}
                       </p>
@@ -223,15 +217,15 @@ const DonorProfile = () => {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-                <button onClick={() => setEditMode(true)} style={{ background: isAdmin ? 'linear-gradient(135deg, #2980b9, #3498db)' : 'linear-gradient(135deg, #d32f2f, #b71c1c)', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', border: 'none', color: 'white', fontWeight: 'bold', cursor: 'pointer', boxShadow: isAdmin ? '0 4px 15px rgba(52,152,219,0.3)' : '0 4px 15px rgba(211,47,47,0.3)' }}>
+                <button onClick={() => setEditMode(true)} className="btn btn-outline-dark" style={{ width: 'auto' }}>
                   ✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}
                 </button>
                 {!isAdmin && (
                   <>
-                    <button onClick={toggleAvailability} style={{ background: 'none', border: `2px solid ${profile.isAvailable ? '#d32f2f' : '#2ecc71'}`, color: profile.isAvailable ? '#d32f2f' : '#2ecc71', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', fontWeight: 'bold', cursor: 'pointer' }}>
+                    <button onClick={toggleAvailability} className="btn" style={{ background: 'none', border: `2px solid ${profile.isAvailable ? 'var(--primary)' : '#2ecc71'}`, color: profile.isAvailable ? 'var(--primary)' : '#2ecc71', width: 'auto' }}>
                       {profile.isAvailable ? '🔴 Tandai Tidak Tersedia' : '🟢 Tandai Tersedia'}
                     </button>
-                    <button onClick={recordDonation} style={{ background: 'linear-gradient(135deg, #8e44ad, #9b59b6)', padding: '0.75rem 1.8rem', width: 'auto', borderRadius: '50px', border: 'none', color: 'white', fontWeight: 'bold', cursor: 'pointer', boxShadow: '0 4px 15px rgba(142,68,173,0.3)' }}>
+                    <button onClick={recordDonation} className="btn btn-primary" style={{ width: 'auto' }}>
                       💖 Catat Donor Baru
                     </button>
                   </>
@@ -240,7 +234,7 @@ const DonorProfile = () => {
             </>
           ) : (
             <form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
-              <h3 style={{ marginTop: 0, marginBottom: '1.5rem', color: isAdmin ? '#2980b9' : '#d32f2f' }}>✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}</h3>
+              <h3 style={{ marginTop: 0, marginBottom: '1.5rem', color: isAdmin ? '#2980b9' : 'var(--primary)' }}>✏️ Edit Informasi {isAdmin ? 'Institusi' : 'Profil'}</h3>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
                 <div>
                   <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.4rem', fontSize: '0.9rem' }}>{isAdmin ? 'Nama Institusi / RS' : 'Nama Lengkap'}</label>
@@ -267,8 +261,8 @@ const DonorProfile = () => {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-                <button type="submit" style={{ background: isAdmin ? 'linear-gradient(135deg, #2980b9, #3498db)' : '#2ecc71', width: 'auto', padding: '0.8rem 2rem' }}>💾 Simpan Perubahan</button>
-                <button type="button" onClick={() => setEditMode(false)} style={{ background: '#95a5a6', width: 'auto', padding: '0.8rem 2rem' }}>❌ Batal</button>
+                <button type="submit" className="btn btn-primary" style={{ width: 'auto' }}>💾 Simpan Perubahan</button>
+                <button type="button" onClick={() => setEditMode(false)} className="btn btn-outline-dark" style={{ width: 'auto' }}>❌ Batal</button>
               </div>
             </form>
           )}
